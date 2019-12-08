@@ -5,6 +5,7 @@ import 'package:flutter_animatedcontainer/src/my_drawer.dart';
 import 'package:flutter_animatedcontainer/src/my_form_validation.dart';
 import 'package:flutter_animatedcontainer/src/my_orientation.dart';
 import 'package:flutter_animatedcontainer/src/my_snack_bar.dart';
+import 'package:flutter_animatedcontainer/src/my_swipe_to_dismiss.dart';
 import 'package:flutter_animatedcontainer/src/my_tab_controller.dart';
 
 void main() => runApp(MyApp());
@@ -83,7 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MyFormValidation'),
                 onPressed: _goMyFormValidation
-            )
+            ),
+            RaisedButton(
+                child: Text('MySwipeToDismiss'),
+                onPressed: _goMySwipeToDismiss
+            ),
           ],
         ),
       ),
@@ -134,5 +139,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _goMyFormValidation() {
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MyFormValidation()));
+  }
+
+  void _goMySwipeToDismiss() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MySwipeToDismiss()));
   }
 }
