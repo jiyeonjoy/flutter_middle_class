@@ -14,7 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // 테마 색상 변경 가능.
+        // primarySwatch: Colors.yellow,
+        brightness: Brightness.dark,
+        primaryColor: Colors.blue,
+        // 플로팅 버튼 색
+        accentColor: Colors.yellow
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
