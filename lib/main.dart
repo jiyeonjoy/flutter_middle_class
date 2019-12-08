@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_container.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 import 'package:flutter_animatedcontainer/src/my_drawer.dart';
+import 'package:flutter_animatedcontainer/src/my_snack_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,9 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
@@ -61,6 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MyDrawer'),
                 onPressed: _goMyDrawer
+            ),
+            RaisedButton(
+                child: Text('MySnackBar'),
+                onPressed: _goMySnackBar
             )
           ],
         ),
@@ -73,6 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
 
   void _goMyAnimatedContainer() {
     Navigator.push(context,
@@ -89,15 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
         MaterialPageRoute(builder: (counter) => MyDrawer()));
   }
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _goMySnackBar() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MySnackBar()));
   }
-
-
-
-
-
-
 }
