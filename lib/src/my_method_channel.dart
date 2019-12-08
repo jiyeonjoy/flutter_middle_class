@@ -20,6 +20,7 @@ class _MyMethodChannelState extends State<MyMethodChannel> {
     String value;
     // try-catch 문 작성 해줘야됨!!
     try {
+      // 네이티브 연동시 getValue 라는 메소드(안드로이드 - 코틀린)를 호출하겠다는 뜻임.
       value = await platform.invokeMethod('getValue');
     } on PlatformException catch(e) {
       value = '네이티브 코드 실행 에러 : ${e.message}';
