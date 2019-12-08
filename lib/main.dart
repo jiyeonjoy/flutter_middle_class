@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_container.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 import 'package:flutter_animatedcontainer/src/my_drawer.dart';
+import 'package:flutter_animatedcontainer/src/my_form_validation.dart';
 import 'package:flutter_animatedcontainer/src/my_orientation.dart';
 import 'package:flutter_animatedcontainer/src/my_snack_bar.dart';
 import 'package:flutter_animatedcontainer/src/my_tab_controller.dart';
@@ -78,6 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MyTabController'),
                 onPressed: _goMyTabController
+            ),
+            RaisedButton(
+                child: Text('MyFormValidation'),
+                onPressed: _goMyFormValidation
             )
           ],
         ),
@@ -124,5 +129,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _goMyTabController() {
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MyTabController()));
+  }
+
+  void _goMyFormValidation() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyFormValidation()));
   }
 }
