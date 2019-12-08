@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_container.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 import 'package:flutter_animatedcontainer/src/my_drawer.dart';
+import 'package:flutter_animatedcontainer/src/my_orientation.dart';
 import 'package:flutter_animatedcontainer/src/my_snack_bar.dart';
 
 void main() => runApp(MyApp());
@@ -63,6 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MySnackBar'),
                 onPressed: _goMySnackBar
+            ),
+            RaisedButton(
+                child: Text('MyOrientation'),
+                onPressed: _goMyOrientation
             )
           ],
         ),
@@ -99,5 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _goMySnackBar() {
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MySnackBar()));
+  }
+
+  void _goMyOrientation() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyOrientation()));
   }
 }
