@@ -4,6 +4,7 @@ import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 import 'package:flutter_animatedcontainer/src/my_drawer.dart';
 import 'package:flutter_animatedcontainer/src/my_orientation.dart';
 import 'package:flutter_animatedcontainer/src/my_snack_bar.dart';
+import 'package:flutter_animatedcontainer/src/my_tab_controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // 테마 색상 변경 가능.
         // primarySwatch: Colors.yellow,
-        brightness: Brightness.dark,
-        primaryColor: Colors.blue,
+        // brightness: Brightness.dark,
+        primaryColor: Colors.green,
         // 플로팅 버튼 색
         accentColor: Colors.yellow
       ),
@@ -73,6 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MyOrientation'),
                 onPressed: _goMyOrientation
+            ),
+            RaisedButton(
+                child: Text('MyTabController'),
+                onPressed: _goMyTabController
             )
           ],
         ),
@@ -114,5 +119,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _goMyOrientation() {
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MyOrientation()));
+  }
+
+  void _goMyTabController() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyTabController()));
   }
 }
