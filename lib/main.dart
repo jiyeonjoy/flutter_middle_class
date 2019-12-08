@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animatedcontainer/my_animated_container.dart';
+import 'package:flutter_animatedcontainer/src/my_animated_container.dart';
+import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,14 +30,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
-//    setState(() {
-//      _counter++;
-//    });
-    Navigator.push(context,
-        MaterialPageRoute(builder: (counter) => MyAnimatedContainer()));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +47,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            RaisedButton(
+                child: Text('MyAnimatedContainer'), 
+                onPressed: _goMyAnimatedContainer
+            ),
+            RaisedButton(
+                child: Text('MyAnimatedOpacity'),
+                onPressed: _goMyAnimatedOpacity
+            )
           ],
         ),
       ),
@@ -64,4 +65,25 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+
+  void _goMyAnimatedContainer() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyAnimatedContainer()));
+  }
+
+  void _goMyAnimatedOpacity() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyAnimatedOpacity()));
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+
+
+
 }
