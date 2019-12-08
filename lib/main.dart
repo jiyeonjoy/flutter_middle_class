@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animatedcontainer/src/my_method_channel.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_container.dart';
 import 'package:flutter_animatedcontainer/src/my_animated_opacity.dart';
 import 'package:flutter_animatedcontainer/src/my_drawer.dart';
@@ -51,10 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
             // 머티리얼 버튼임!!!!
             RaisedButton(
                 child: Text('MyAnimatedContainer'), 
@@ -88,6 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
                 child: Text('MySwipeToDismiss'),
                 onPressed: _goMySwipeToDismiss
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            ),
+            RaisedButton(
+                child: Text('MyMethodChannel'),
+                onPressed: _goMyMethodChannel
             ),
           ],
         ),
@@ -144,5 +149,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _goMySwipeToDismiss() {
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MySwipeToDismiss()));
+  }
+
+  void _goMyMethodChannel() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (counter) => MyMethodChannel()));
   }
 }
