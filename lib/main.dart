@@ -35,8 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //    });
     Navigator.push(context,
         MaterialPageRoute(builder: (counter) => MyAnimatedContainer()));
-    // 파이어베이스 로그인 시 정보 추가
-    // MaterialPageRoute(builder: (counter) => CreatePage(widget.user)));
   }
 
   @override

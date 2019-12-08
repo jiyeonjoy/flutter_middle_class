@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MyAnimatedContainer extends StatefulWidget {
@@ -6,6 +8,8 @@ class MyAnimatedContainer extends StatefulWidget {
 }
 
 class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
+  double _width = 50;
+  double _height = 50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,13 +18,19 @@ class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
       ),
       body: Center(
         child: AnimatedContainer(
-            width: 50,
-            height: 50,
+            width: _width,
+            height: _height,
             color: Colors.green,
             duration: Duration(seconds: 1)),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            final random = Random();
+            _width = random.nextInt(300).toDouble();
+            _height = random.nextInt(300).toDouble();
+          });
+        },
         child: Icon(Icons.play_arrow),
       ),
     ); 
